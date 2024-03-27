@@ -46,8 +46,8 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
 //     });
 
 //     // Other code related to Express setup, routes, and starting the server
-//     app.listen(PORT, () => {
-//         console.log(`Server is running on http://localhost:${PORT}`);
-//     });
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
 
 // });
