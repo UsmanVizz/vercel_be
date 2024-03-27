@@ -30,6 +30,7 @@ const storage = multer.diskStorage({
 });
 
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 mongooseConnection.on('open', () => {
     console.log('MongoDB connected');
