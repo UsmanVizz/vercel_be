@@ -12,7 +12,7 @@ require('dotenv').config();
 const routes = require("./routes");
 const app = express();
 
-const PORT = process.env.PORT ? process.env.PORT : 3001;
+const PORT = process.env.PORT || 3001;
 
 
 
@@ -32,22 +32,22 @@ const storage = multer.diskStorage({
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
-mongooseConnection.on('open', () => {
-    console.log('MongoDB connected');
+// mongooseConnection.on('open', () => {
+//     console.log('MongoDB connected');
 
-    // Use the imported routes
-    app.use("/api", routes);
-    app.use("/", test);
+//     // Use the imported routes
+//     app.use("/api", routes);
+//     app.use("/", test);
 
-    // Error handling middleware
-    app.use((err, req, res, next) => {
-        console.error(err.stack);
-        res.status(500).send('Something broke!');
-    });
+//     // Error handling middleware
+//     app.use((err, req, res, next) => {
+//         console.error(err.stack);
+//         res.status(500).send('Something broke!');
+//     });
 
-    // Other code related to Express setup, routes, and starting the server
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
+//     // Other code related to Express setup, routes, and starting the server
+//     app.listen(PORT, () => {
+//         console.log(`Server is running on http://localhost:${PORT}`);
+//     });
 
-});
+// });
