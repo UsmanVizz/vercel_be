@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require('morgan');
 const multer = require('multer');
 const corsMiddleware = require("./middleware/cors_middleware");
-const upload = multer({ dest: 'C:/usman/hall-management-backend-api-server/images' });
+// const upload = multer({ dest: 'C:/usman/hall-management-backend-api-server/images' });
 const test = require("./routes/test.js");
 
 const bodyParser = require("body-parser");
@@ -20,14 +20,14 @@ app.use(corsMiddleware);
 app.use(bodyParser.json());
 
 
-const storage = multer.diskStorage({
-    destination: function (req, file, callback) {
-        callback(null, 'C:/usman/hall-management-backend-api-server/images');
-    },
-    filename: function (req, file, callback) {
-        callback(null, file.fieldname);
-    }
-});
+// const storage = multer.diskStorage({
+//     destination: function (req, file, callback) {
+//         callback(null, 'C:/usman/hall-management-backend-api-server/images');
+//     },
+//     filename: function (req, file, callback) {
+//         callback(null, file.fieldname);
+//     }
+// });
 
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
